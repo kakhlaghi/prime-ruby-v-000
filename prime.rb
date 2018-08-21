@@ -14,11 +14,24 @@ def prime?(int)
       end
     }
   end
-  if int >= -1 && int <= 1 
+  if int <= 1 
     is_it_prime = false
   else
     is_it_prime = !is_it_prime.include?(false)
   end
   is_it_prime
 end
+
+#their solution
+def prime?(num)
+  if num < 0 or num == 0 or num == 1
+    return false
+  else
+    (2..num-1).to_a.all? do |possible_factor| #what does to_a.all? do
+      num % possible_factor != 0
+    end
+  end
+end
+
+puts prime?(105557)
 
